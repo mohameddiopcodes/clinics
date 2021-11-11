@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add Clinic</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form}}
+    {% if not object.name %}
+    <input type="submit" value="Add clinic">
+    {% else %}
+    <input type="submit" value="Edit clinic">
+    {% endif %}
+</form>
+{% endblock %}

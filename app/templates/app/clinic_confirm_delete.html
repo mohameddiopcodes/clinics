@@ -1,0 +1,5 @@
+<form action="" method='POST'>
+    {% csrf_token %}
+    <input type="submit" value="Sure you want to delete {{object.name}}?">
+</form>
+<a href="{% url 'home' %}">cancel</a>

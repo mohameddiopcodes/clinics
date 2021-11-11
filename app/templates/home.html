@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>home</h1>
+
+{% for clinic in clinics %}
+    <dl>
+        <dt>{{clinic.name}}</dt>
+        <dd>{{clinic.name}} has {{clinic.number_of_patients}} patients and is located in {{clinic.city}}, {{clinic.country}}. You can reach them at +1{{clinic.phone_number}}</dd>
+    </dl>
+    <a href="{% url 'update_clinic' clinic.id %}">Edit</a>
+    <a href="{% url 'delete_clinic' clinic.id %}">Delete</a>
+{% empty %}
+    <h1>No clinic added...</h1>
+{% endfor %}
+
+{% endblock %}
